@@ -1,0 +1,25 @@
+{% extends 'psr/base.html' %}
+
+{% block content %}
+<div class="container my-5  d-flex justify-content-center align-items-center">
+
+    <form  method='POST' >
+        {% csrf_token %}
+
+        <h1 class="text-center my-4 mb-4">Delete Post</h1>
+        <h2> Are you sure you want to delete the post "{{ object.title}} ?"</h2>
+         
+     
+
+   
+       
+        <div class="d-grid gap-2 col-md-6 mx-auto my-5 mb-5">
+          <button type="submit" class="btn btn-danger btn-lg mx-5 my-3">Yes, Delete</button>
+          <a class="btn btn-primary btn-lg my-3 mb-5 mx-5" href="{% url 'post-detail' object.id %}">Cancel</a>
+        </div>
+
+      
+      </form>
+
+</div>
+{% endblock content %}

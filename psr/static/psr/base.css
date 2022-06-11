@@ -1,0 +1,48 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+   
+
+  }
+  .carousel-caption{
+    background-color: #FF8C32;
+  }
+  .navbar-brand{
+    font-family: "Ubuntu";
+
+  }
+
+
+/* Navbar Section */
+
+.login-button{
+
+ background-color: #06FF00;
+}
+
+
+
+  /* #564A4A */
+
+/* Footer Section */
+.footer-class {
+    padding: 5% 15%;
+    text-align: center;
+ 
+  }
+#footer {
+    background-color:#06113C;
+    margin: auto;
+   
+  }
+  
+  .social-icon {
+    margin: 20px 10px;
+    color: #ff4c68;
+  }
+  
+  .social-icon:hover {
+    color: #e18f72;
+  }
+  .copyright-text{
+    color: #fff;
+  }

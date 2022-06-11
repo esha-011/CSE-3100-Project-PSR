@@ -1,0 +1,21 @@
+{% extends 'psr/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container my-5  d-flex justify-content-center align-items-center">
+
+    <div class="card text-center  mb-4" style="width: 20rem;">
+        <img src="{{ user.profile.image.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h1>  {{ user.username }}  </h1> 
+          
+        </div>
+          <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{ user.email }}</li>
+          
+        </ul>
+      </div>
+
+   
+
+</div>
+{% endblock content %}

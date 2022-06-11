@@ -1,0 +1,24 @@
+
+{% extends 'psr/base.html' %}
+
+{% block content %}
+<div class="container my-5  ">
+
+  <div class="mb-4 my-4 d-flex justify-content-center align-items-center">
+
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Thanks for visiting our website!</h4>
+            <p>You have been logged out successfully !</p>
+            <hr>
+            <p class="mb-0">Whenever you need to, log in again by clicking the button below.</p>
+        </div>
+     
+   </div>   
+         <div class="mb-4 d-flex justify-content-center align-items-center">   
+             <div class="d-grid gap-2 col-md-2 mx-auto my-5 mb-4">
+                 <a class="btn btn-info btn-lg" href="{% url 'login' %}">log in again</a>
+            </div>
+      </div>
+</div>
+
+{% endblock content %}
