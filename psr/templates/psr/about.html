@@ -1,1 +1,45 @@
 {% extends 'psr/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+<div class="section">
+    <div class="about-container">
+        <div class="row">
+            <div class="col-lg-6">
+            <div class="title">
+                <h1>About Us </h1>
+            </div>
+            <div class="about-content">
+                <h3>Photographic Society of RUET(PSR) </h3>
+                <p> 
+                    The Photographic society of RUET is one of the leading clubs based on extra curricular activities in Rajshahi University of Engineering & Technology(RUET).<br><br>
+                     The Club was formed on 21st February, 2006 by the hands of the students of 02 Series of RUET.The digital camera or film camera was still a luxury few would taste. From that photographic need of the students here at RUET, PSR was created.
+                
+                    
+                
+                  <br><br>The club currently has a committee of 40 members who are dedicated to the club. The number of general members may exceed 800. But active members might be around 100 who are participating in various events of the club regularly. With such dedicated members, the club goes forward in fulfilling its goal. </p>
+             
+            </div>
+        </div>  
+        <div class="col-lg-6 about-img-section" >
+            
+                <img src="{% static 'psr/about.jpg' %}">
+
+            
+        </div> 
+            
+            
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    {% endblock content %}

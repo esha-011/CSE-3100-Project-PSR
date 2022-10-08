@@ -10,15 +10,17 @@
    <!-- card- -->
 
 
-  <div class="container my-5 ">
+  <div class="container-fluid my-5 ">
     <div class="row mb-2 d-flex justify-content-center align-items-center">
         <div class="col-md-9">
     
             <div class="card " >
 
-               <div class="card-body">
+               <div class="card-body post-card m-3">
                  <strong class="d-inline-block mb-2 text-primary">{{post.author}}</strong>
+
                  <div class="mb-1 text-muted">{{post.date_posted|date:"F d, Y"}}</div>
+
                  {% if object.author == user %} 
           
 
@@ -31,7 +33,7 @@
 
               </div>
         
-              <div class="card-body">
+              <div class="card-body post-card m-3">
                 <h5 class="card-title">{{post.title}}</h5>
                 <p class="card-text">{{post.content}}</p>
                 

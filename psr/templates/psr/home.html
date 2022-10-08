@@ -5,75 +5,77 @@
 <!-- carousel section -->
 
 <div class="container-fluid ">
-<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+
+      <!-- carousel item-1-->
+      <div class="carousel-item active">
+        <img src="{% static 'psr/new 1.jpg' %}" height="650" width="1400" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="h1-title"> Welcome to PSR </h1>
+          <p class="p-title"><span class="span-2"> Photographic Society of </span> <span class="span-1"> RUET </span></p>
+        </div>
+      </div>
+
+      <!-- carousel item-2-->
+      <div class="carousel-item">
+        <img src="{% static 'psr/cr_spectacle.jpg' %}" height="650" width="1400" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="h1-title">Best photography blog</h1>
+
+        </div>
+      </div>
+
+      <!-- carousel item-3-->
+      <div class="carousel-item">
+        <img src="{% static 'psr/blog1.jfif' %}" height="650" width="1400" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="h1-title">Award winning blog</h1>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- carousel buttons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  <div class="carousel-inner">
-
-    <!-- carousel item-1-->
-    <div class="carousel-item active">
-      <img src="{% static 'psr/new 1.jpg' %}" height="650" width="1400" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h1 class="h1-title">Welcome to PSR</h1>
-        <p class="p-title">Photographic Society of RUET</p>
-      </div>
-    </div>
-
-    <!-- carousel item-2-->
-    <div class="carousel-item">
-      <img src="{% static 'psr/cr_spectacle.jpg' %}" height="650" width="1400" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h1 class="h1-title">Best photography blog</h1>
-      
-      </div>
-    </div>
-
-    <!-- carousel item-3-->
-    <div class="carousel-item">
-      <img src="{% static 'psr/blog1.jfif' %}" height="650" width="1400" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h1 class="h1-title">Award winning blog</h1>
-       
-      </div>
-    </div>
-  </div>
-
-  <!-- carousel buttons -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
 </div>
 
 <!-- post section -->
-<div class="container justify content center post-container ">
+<div class="container-fluid  post-container ">
   <div class="row m-5 ">
 
     {%for post in posts%}
-    <div class="col-md-4 ">
+    <div class="col-md-4  ">
 
       <!-- card -->
-      <div class="card m-2">
-        <div class="card-body">
+      <div class="card m-2  ">
+        <div class="card-body post-card m-3">
 
           <!-- post author -->
           <strong class="d-inline-block mb-2 text-primary">{{post.author}}</strong>
 
           <!-- post date -->
           <div class="mb-1 text-muted">{{post.date_posted|date:"F d, Y"}}</div>
-        </div>
+       
 
         <!-- post image -->
-        <img src="{{ post.photo.url }}" height="200" class="card-img-top" alt="...">
-        <div class="card-body">
+        <img src="{{ post.photo.url }}" height="200" class="card-img-top " alt="...">
+      </div>
+
+        <div class="card-body post-card m-3">
 
           <!-- post title -->
           <h5 class="card-title">{{post.title}}</h5>
@@ -82,53 +84,109 @@
           <p class="card-text">{{post.content}}</p>
 
           <!-- post details -->
-          <a href="{% url 'post-detail' post.id  %}" class="stretched-link">view post</a>
+          <a href="{% url 'post-detail' post.id  %}" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">view post</a>
+        
         </div>
       </div>
     </div>
     {% endfor%}
-
-  </div>
+    </div>
 </div>
+
+<!-- pagination section -->
+
+
+<div class= "container-fluid map ">
+
+{% if is_paginated %}
+
+  {% if page_obj.has_previous %}
+
+    
+
+      <a href="?page=1" class="btn btn-outline-warning btn-sm active mb-4" role="button" aria-pressed="true">First</a>
+      <a href="?page= {{ page_obj.previous_page_number}}" class="btn btn-outline-warning btn-sm active mb-4" role="button" aria-pressed="true">Previous</a>
+
+  {% endif %}
+
+
+  {% for num in page_obj.paginator.page_range %}
+
+    {% if page_obj.number == num %}
+
+     <a href="?page={{ num }}" class="btn btn-warning btn-sm active mb-4" role="button" aria-pressed="true">{{ num }}</a>
+
+    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+
+     <a href="?page={{ num }}" class="btn btn-outline-warning btn-sm active mb-4" role="button" aria-pressed="true">{{ num }}</a>
+
+
+    {% endif %}
+
+  {% endfor%}
+
+  {% if page_obj.has_next %}
+
+   <a href="?page= {{ page_obj.next_page_number}}" class="btn btn-outline-warning btn-sm active mb-4" role="button" >Next</a>
+   <a href="?page= {{ page_obj.paginator.num_pages}}" class="btn btn-outline-warning btn-sm active mb-4" role="button" aria-pressed="true">Last</a>
+
+  {% endif %}
+
+{% endif %}
+
+ </div>
 
 <!-- Footer section -->
 
 
+
 <section id="footer">
+
   <div class="container-fluid footer-class">
-
-    <div class="row">
+     <div class="row">
       <div class="col-lg-4 footer-col">
-    
-        <h2> About Us</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis aliquam lorem,
-          gravida mollis lacus dignissim efficitur. Donec vel iaculis nisi. Vestibulum finibus pretium leo eget fringilla. </p>
+
+        <h2> Contact Info</h2>
+
+         <div>
+          <a href="https://goo.gl/maps/qLM7jeupCPBjVpkw7"> <i class="social-icon fas  fa-location-dot fa-2x" aria-hidden="true"> </i> </a>
+          <a href="https://goo.gl/maps/qLM7jeupCPBjVpkw7"> <p>Rajshahi University of Engineering & Technology, Rajshahi  <br>Bangladesh</p>
+        </div>
+
+        <div>
+          <a href="mailto:marufaahmedesha@gmail.com"><i class="social-icon fas fa-envelope   fa-2x " aria-hidden="true"></i> psr.ruet@gmail.com</a>
+        </div>
+
+        <div>
+          <i class="social-icon fas fa-phone  fa-2x"></i>
+          <p> 01300-511447</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4  map">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3634.509640278918!2d88.62618861482783!3d24.363568284290743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fbefd0a55ea957%3A0x2f9cac3357d62617!2sRajshahi%20University%20of%20Engineering%20%26%20Technology!5e0!3m2!1sen!2sbd!4v1664436047105!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
       </div>
-      <div class="col-lg-4 footer-col">
-        
-        <h2>Newsletter</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis aliquam lorem,
-          gravida mollis lacus dignissim efficitur. Donec vel iaculis nisi. Vestibulum finibus pretium leo eget fringilla. </p>
 
-      </div>
-      <div class="col-lg-4 footer-col">
-        
+
+      <div class="col-lg-4 footer-col-3">
         <h2>Follow us</h2>
-          <i class="social-icon fab fa-facebook   fa-2x" aria-hidden="true"></i>
-          <i class="social-icon fab fa-twitter    fa-2x " aria-hidden="true"></i>
-          <i class="social-icon fab fa-instagram  fa-2x " aria-hidden="true"></i>
-          <i class="social-icon fas fa-envelope   fa-2x " aria-hidden="true"></i>
-      
-        
+        <a href="https://www.facebook.com/ruetps"> <i class="social-icon fab fa-facebook   fa-2x" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/accounts/login/?next=%2Fpsr_ruet%2F"> <i class="social-icon fab fa-instagram  fa-2x" aria-hidden="true"></i></a>
 
+         </div>
       </div>
-    </div>
+      <p class="border-top">© 2022 PSR, Inc. All rights reserved.</p>
 
-  </div>
-</section>
+     </div>
+     
 
-<!-- <footer id="footer">
+</div>
+
+  
+</section> 
+
+{% comment %} <!-- <footer id="footer">
   <div class="container-fluid footer-class">
     <i class="social-icon fab fa-facebook   fa-2x" aria-hidden="true"></i>
     <i class="social-icon fab fa-twitter    fa-2x " aria-hidden="true"></i>
@@ -138,5 +196,9 @@
       Copyright 2022 PSR
     </p>
   </div>
-</footer> -->
+</footer> --> {% endcomment %}
+
+
+
+
 {% endblock content %}
